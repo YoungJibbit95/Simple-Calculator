@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
     <title>Calculator</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
+    <script src="path_to_math_lib.js"></script>
     <link rel="stylesheet" href="calculator.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background 0.5s ease;
+        }
+
+        #dashboard-window {
+            display: none;
+            position: absolute;
+            top: 150px;
+            right: 50px;
+            background-color: #27272a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #dashboard-window.show {
+            display: block;
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
 </head>
 <body>
 
+<div id="dashboard-window" class="dashboard-card">
+    <div class="content">
+        <button id="close-dashboard" class="close-btn"><i class="ri-close-line"></i></button>
+        <h4>Menu <i class="ri-dashboard-line"></i></h4>
+        <button class="font-change" id="fontChange">Sans</button>
+        <button class="background" id="changeBackground">Wallpaper</button>
+    </div>
+</div>
 
 <div id="calculator">
     <input id="display" readonly>
@@ -32,12 +64,13 @@
         <button>.</button>
         <button onclick="calculate()">=</button>
         <button onclick="clearDisplay()" class="operator-btn">C</button>
+        <button onclick="toggleDashboard()"><i class="ri-menu-line"></i></button>
+        <button onclick="appendToDisplay('√')" class="operator-btn">√</button>
+
     </div>
 </div>
 
-
-
-
-<script src="calculator.js"></script>
+<script src="calculator.js">
+</script>
 </body>
 </html>

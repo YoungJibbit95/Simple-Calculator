@@ -16,26 +16,30 @@ function calculate(){
     }
 }
 
-function toggleMenu() {
-    var menu = document.getElementById("menu");
-    if (menu.classList.contains("show")) {
-        menu.classList.remove("show");
-        setTimeout(() => menu.style.display = "none", 300);
+function toggleDashboard() {
+    var dashboard = document.getElementById("dashboard-window");
+    if (dashboard.classList.contains("show")) {
+        dashboard.classList.remove("show");
+        setTimeout(() => dashboard.style.display = "none", 300);
     } else {
-        menu.style.display = "block";
-        setTimeout(() => menu.classList.add("show"), 10);
+        dashboard.style.display = "block";
+        setTimeout(() => dashboard.classList.add("show"), 10);
     }
 }
 
-function openFontMenu() {
-    var fontMenu = document.getElementById("font-menu");
-    fontMenu.style.display = "block";
+function closeDashboard() {
+    var dashboard = document.getElementById("dashboard-window");
+    dashboard.classList.remove("show");
+    setTimeout(() => dashboard.style.display = "none", 300);
 }
 
-function changeFont(fontName) {
-    document.getElementById("calculator").style.fontFamily = fontName;
+function changeFontToSans() {
+    document.body.style.fontFamily = "'Plus Jakarta Sans', sans-serif";
 }
 
+function changeBackground() {
+    document.body.style.background = "linear-gradient(140deg, darkblue 0%, darkred 100%)";
+}
 
 function addTouchAndClickListener(element, handler) {
     let touchHandled = false;
@@ -53,7 +57,6 @@ function addTouchAndClickListener(element, handler) {
     });
 }
 
-
 document.querySelectorAll('button').forEach(button => {
     const value = button.innerText;
     if (button.classList.contains('operator-btn')) {
@@ -63,8 +66,36 @@ document.querySelectorAll('button').forEach(button => {
     } else if (value === '=') {
         addTouchAndClickListener(button, calculate);
     } else if (value === 'Menu') {
-        addTouchAndClickListener(button, toggleMenu);
+        addTouchAndClickListener(button, toggleDashboard);
+    } else if (button.id === 'fontChange') {
+        addTouchAndClickListener(button, changeFontToSans);
+    } else if (button.id === 'close-dashboard') {
+        addTouchAndClickListener(button, closeDashboard);
+    } else if (button.id === 'changeBackground') {
+        addTouchAndClickListener(button, changeBackground);
     } else {
         addTouchAndClickListener(button, () => appendToDisplay(value));
     }
+
+    function appendToDisplay(input) {
+        if (input === '√') {
+            display.value += input;
+        } else {
+            display.value += input;
+        }
+    }
+
+    function appendToDisplay(input) {
+        if (input === '+' || input === '-' || input === '*' || input === '/') {
+
+            display.value += input;
+        } else if (input === '√') {
+
+            display.value += 'mathLib.squareRoot(';
+        } else {
+
+            display.value += input;
+        }
+    }
+
 });

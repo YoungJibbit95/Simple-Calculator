@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
 * {
     font-family: 'Poppins', sans-serif;
 }
 body {
-    font-family: Poppins, sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, cyan, mediumvioletred, magenta);
+    background: linear-gradient(135deg, darkcyan, mediumvioletred, darkmagenta);
 }
 
 
@@ -25,11 +26,31 @@ body {
     overflow: hidden;
     border-width: 5px;
     border-style: groove;
-    border-image: linear-gradient(135deg, cyan, mediumvioletred, magenta) 1;
+    border-image: linear-gradient(135deg, darkcyan, mediumvioletred, darkmagenta) 1;
     box-shadow: 0 0 5px 5px cyan, 0 0 5px 5px magenta, 0 0 5px 5px magenta, 0 0 5px 5px cyan;
     animation: fadeIn 1s ;
     opacity: 1;
 
+}
+
+.background{
+    margin-left: 2px;
+    margin-top: 2px;
+    position: static;
+    align-self: center;
+    width: 202px;
+    height: 55px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 3px 3px cyan, 0 0 3px 3px magenta, 0 0 3px 3px cyan, 0 0 3px 3px magenta;
+    -webkit-animation: glow 4s ease-in-out infinite alternate;
+    -moz-animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate;
 }
 
 @keyframes fadeIn {
@@ -80,6 +101,26 @@ body {
     padding: 25px;
 }
 
+.font-change{
+    margin-left: 2px;
+    margin-top: 2px;
+    position: static;
+    align-self: center;
+    width: 98px;
+    height: 55px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 3px 3px cyan, 0 0 3px 3px magenta, 0 0 3px 3px cyan, 0 0 3px 3px magenta;
+    -webkit-animation: glow 4s ease-in-out infinite alternate;
+    -moz-animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
 button {
 
     margin-left: 2px;
@@ -121,7 +162,7 @@ button:active {
 }
 
 .operator-btn {
-    background: linear-gradient(60deg, cyan, magenta);
+    background: linear-gradient(60deg, darkcyan, darkmagenta);
 }
 
 .operator-btn:hover {
@@ -130,4 +171,100 @@ button:active {
 
 .operator-btn:active {
     background-color: hsl(35, 100%, 75%);
+}
+
+.dashboard-card {
+    position: static;
+    padding: 3rem 2rem;
+    background-color: #27272a;
+    display: none;
+    flex-direction: column;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-card .content {
+    flex: 1;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.dashboard-card .content h4 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.dashboard-card h3 {
+    color: #fff;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 2px dashed #fff;
+}
+
+.dashboard-card p {
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.dashboard-card p i {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.close-btn {
+    margin-left: 2px;
+    margin-top: 2px;
+    position: static;
+    align-self: center;
+    width: 42px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 3px 3px cyan, 0 0 3px 3px magenta, 0 0 3px 3px cyan, 0 0 3px 3px magenta;
+    -webkit-animation: glow 4s ease-in-out infinite alternate;
+    -moz-animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 20px #fff, 0 0 20px cyan, 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan, 0 0 5px cyan, 0 0 20px cyan;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 20px magenta, 0 0 40px magenta, 0 0 20px magenta, 0 0 20px mediumvioletred, 0 0 20px mediumvioletred, 0 0 20px magenta;
+    }
+}
+
+.close-btn:hover {
+    color: cyan;
+}
+
+
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 20px #fff, 0 0 20px cyan, 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan, 0 0 5px cyan, 0 0 20px cyan;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 20px magenta, 0 0 40px magenta, 0 0 20px magenta, 0 0 20px mediumvioletred, 0 0 20px mediumvioletred, 0 0 20px magenta;
+    }
 }
