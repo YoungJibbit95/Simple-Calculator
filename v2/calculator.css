@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, darkcyan, mediumvioletred, darkmagenta);
+}
+
+#calculator {
+    font-family: Poppins, sans-serif;
+    background-color: hsl(0, 0%, 15%);
+    border: 8px solid cyan;
+    border-image: cyan;
+    height: 440px;
+    max-width: 325px;
+    overflow: hidden;
+    border-width: 5px;
+    border-style: groove;
+    border-image: linear-gradient(135deg, darkcyan, mediumvioletred, darkmagenta) 1;
+    box-shadow: 0 0 5px 5px cyan, 0 0 5px 5px magenta, 0 0 5px 5px magenta, 0 0 5px 5px cyan;
+    animation: fadeIn 1s ;
+    opacity: 1;
+    position: relative;
+    transition: all 0.5s ease; /* Smooth transition */
+}
+
+.background{
+    margin-left: 2px;
+    margin-top: 2px;
+    position: static;
+    align-self: center;
+    width: 202px;
+    height: 55px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 3px 3px cyan, 0 0 3px 3px magenta, 0 0 3px 3px cyan, 0 0 3px 3px magenta;
+    -webkit-animation: glow 4s ease-in-out infinite alternate;
+    -moz-animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+    100%{opacity:0}
+}
+
+
+
+@keyframes animate-border {
+    0% {
+        border-image-source: linear-gradient(0deg, cyan, magenta);
+    }
+    100% {
+        border-image-source: linear-gradient(360deg, cyan, magenta);
+    }
+}
+
+#display {
+    align-self: center;
+    text-align: -webkit-left;
+    color: white;
+    width: 315px;
+    height: 60px;
+    padding: 0px;
+    margin-left: 3px;
+    font-size: 3rem;
+    border: 3px solid lightskyblue;
+    border-radius: 15%;
+    background-color: hsl(0, 0%, 20%);
+    -webkit-animation: glow 4s ease-in-out infinite alternate;
+    -moz-animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+
+
+@keyframes myFunction {
+    0% {
+      opacity: 0;
+      transform: scale(10%)}
+
+    }
+    50% {
+        opacity: 1;
+        transform: scale(20%)}
+    
+    100% {
+        opacity: 1;
+        transform: scale(30%)}
+    
+
+@keyframes textPopUp {
+    0% {
+      transform: scale(5px);
+    }
+    50% {
+      transform: scale(10px);
+    }
+    100% {
+      transform: scale(12px);
+    }
+  }
+
+
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 2px #fff, 0 0 2px cyan, 0 0 2px cyan, 0 0 2px cyan, 0 0 2px cyan, 0 0 2px cyan, 0 0 2px cyan;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 10px magenta, 0 0 10px magenta, 0 0 10px magenta, 0 0 10px mediumvioletred, 0 0 10px mediumvioletred, 0 0 20px magenta;
+    }
+}
+
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px;
+}
+
+.font-change{
+    margin-left: 2px;
+    margin-bottom: 12px;
+    margin-top: 15px;
+    position: static;
+    align-self: center;
+    width: 300px;
+    height: 55px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 3px 3px cyan, 0 0 3px 3px magenta, 0 0 3px 3px cyan, 0 0 3px 3px magenta;
+    -webkit-animation: glow 4s ease-in-out infinite alternate;
+    -moz-animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes textpopUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  button {
+    margin-left: 2px;
+    margin-top: 2px;
+    position: static;
+    align-self: center;
+    width: 62px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 3px 3px cyan, 0 0 3px 3px magenta, 0 0 3px 3px cyan, 0 0 3px 3px magenta;
+    -webkit-animation: glow 4s ease-in-out infinite alternate;
+    -moz-animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate, textpopUp 0.3s ease; /* Apply pop-up animation */
+    transition: transform 0.2s ease; /* Smooth transition for pop effect */
+  }
+
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+button:active {
+    background-color: hsl(0, 0%, 50%);
+    transform: scale(0.95); /* Scale down on click */
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px #fff, 0 0 20px cyan, 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan, 0 0 5px cyan, 0 0 20px cyan;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 20px magenta, 0 0 40px magenta, 0 0 20px magenta, 0 0 20px mediumvioletred, 0 0 20px mediumvioletred, 0 0 20px magenta;
+    }
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 20px #fff, 0 0 20px cyan, 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan, 0 0 5px cyan, 0 0 20px cyan;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 20px magenta, 0 0 40px magenta, 0 0 20px magenta, 0 0 20px mediumvioletred, 0 0 20px mediumvioletred, 0 0 20px magenta;
+    }
+}
+
+
+.operator-btn {
+    background: linear-gradient(60deg, darkcyan, darkmagenta);
+}
+
+.operator-btn:hover {
+    background-color: hsl(0, 0%, 40%);
+}
+
+.operator-btn:active {
+    background-color: hsl(35, 100%, 75%);
+}
+
+
+.dashboard-card {
+    position: static;
+    margin-top: 270px;
+    align-self: center;
+    padding: 3rem 2rem;
+    background-color: #27272a;
+    display: none;
+    flex-direction: column;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 0 25px cyan,0 20px 20px magenta;
+    animation: popFadeIn 0.5s ease forwards; /* Pop and fade out animation */
+    animation: popFadeOut 0.2s ease-out;
+}
+
+@keyframes popFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(0.8); /* Scale down */
+    }
+}
+
+
+
+.dashboard-card .content {
+    flex: 1;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.dashboard-card .content h4 {
+    text-decoration: underline;
+    margin-top: 4%;
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.dashboard-card h3 {
+    color: #fff;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 2px dashed #fff;
+}
+
+.dashboard-card p {
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.dashboard-card p i {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.close-btn {
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 0px;
+    position: static;
+    align-self: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 3px 3px cyan, 0 0 3px 3px magenta, 0 0 3px 3px cyan, 0 0 3px 3px magenta;
+    -webkit-animation: glow 4s ease-in-out infinite alternate;
+    -moz-animation: glow 4s ease-in-out infinite alternate;
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 20px #fff, 0 0 20px cyan, 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan, 0 0 5px cyan, 0 0 20px cyan;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 20px magenta, 0 0 40px magenta, 0 0 20px magenta, 0 0 20px mediumvioletred, 0 0 20px mediumvioletred, 0 0 20px magenta;
+    }
+}
+
+.close-btn:hover {
+    color: cyan;
+}
+
+
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 20px #fff, 0 0 20px cyan, 0 0 5px cyan, 0 0 10px cyan, 0 0 20px cyan, 0 0 5px cyan, 0 0 20px cyan;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 20px magenta, 0 0 40px magenta, 0 0 20px magenta, 0 0 20px mediumvioletred, 0 0 20px mediumvioletred, 0 0 20px magenta;
+    }
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
